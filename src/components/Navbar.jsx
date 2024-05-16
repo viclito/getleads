@@ -14,12 +14,12 @@ const Layout = ({children}) => {
                     <GetLeadsSvg />
                 </IconButton>
             </Box>
-          <Link to='/'>
+          <Link to='/' style={{backgroundColor: pathname === '/' ? '#404960' : ''}}>
             <IconButton disableRipple  sx={{paddingLeft:2 , paddingRight:2}}>
                 <HomeSvg color={pathname === '/' ? "#F44F59" : "#C2C2C2"} />
             </IconButton>
           </Link>
-          <Link>
+          <Link to='/voice'>
             <IconButton disableRipple  sx={{paddingLeft:2 , paddingRight:2}}>
                 <DashboardSvg color={pathname === '/h' ? "#F44F59" : "#C2C2C2"} />
             </IconButton>

@@ -11,10 +11,12 @@ import LeadThreeDots from './Leads/Action/LeadThreeDots'
 import assignImg from '../assets/assignimg.png'
 import AssignedToAgents from './Leads/Action/AssignedToAgents'
 import AddLeads from './Leads/Action/AddLeads'
+import Profile from './Leads/profile/Profile'
 
 const Lead = () => {
   const [username ,  setUsername]= useState('Sharun Das')
   const [filter , setFilter]= useState(false)
+  const [profileToggle , setProfileToggle]= useState(false)
   const [action , setAction]= useState(false)
   const [assigntoogle , setAssigntoogle]= useState(false)
   const [addLeadToggle , setAddLeadToggle]= useState(false)
@@ -33,7 +35,7 @@ const Lead = () => {
                   <input placeholder='Search here' style={{ width: '250px', outline: 'none', border: 'none' }} />
               </Paper>
           </Box>
-
+          
           <Box sx={{flexShrink: 0 , display:'flex', gap:2 , alignItems:'center'}}>
             <Box sx={{position:'relative'}}>
               <ButtonGroup variant="contained" aria-label="Add-buttons" onClick={()=>setAddButton(!addButton)} >
@@ -48,7 +50,9 @@ const Lead = () => {
             <IconButton sx={{border:'1px solid #c2c2c2'}}>
               <LeadsImgTwoSvg/>
             </IconButton>
-            <IconButton sx={{border:'1px solid #c2c2c2'}}>
+
+            {/* Profile page  */}
+            <IconButton sx={{border:'1px solid #c2c2c2'}} onClick={()=>setProfileToggle(true)}>
               <LeadsImgThreeSvg/>
             </IconButton>
             <Typography variant='body2' sx={{display:'flex', alignItems:'center' , gap:'2px' , fontWeight:400 , fontSize:'12px'}}>{username} <DownArrowSvg/> </Typography>
@@ -128,6 +132,7 @@ const Lead = () => {
 
         <AssignedToAgents assigntoogle={assigntoogle} setAssigntoogle={setAssigntoogle}/>
         <AddLeads addLeadToggle={addLeadToggle} setAddLeadToggle={setAddLeadToggle}/>
+        <Profile profileToggle={profileToggle} setProfileToggle={setProfileToggle} username={username}/>
 
       </Box>
     </Layout>

@@ -16,6 +16,7 @@ const LeadsList = () => {
 
     const leadDetails = [
         {
+            id:1,
             name:'John Deo',
             Number:9023323453,
             Purpose:'Getlead CRM', 
@@ -24,6 +25,7 @@ const LeadsList = () => {
             Next:''
         },
         {
+            id:2,
             name:'Sharun das',
             Number:9023323453,
             Purpose:'Gdesk', 
@@ -32,6 +34,7 @@ const LeadsList = () => {
             Next:'25 Dec 2023 , 10:00pm'
         },
         {
+            id:3,
             name:'John Deo',
             Number:9023323453,
             Purpose:'Getlead CRM', 
@@ -40,6 +43,7 @@ const LeadsList = () => {
             Next:''
         },
         {
+            id:4,
             name:'Sharun das',
             Number:9023323453,
             Purpose:'Gdesk', 
@@ -48,6 +52,7 @@ const LeadsList = () => {
             Next:'25 Dec 2023 , 10:00pm'
         },
         {
+            id:5,
             name:'John Deo',
             Number:9023323453,
             Purpose:'Getlead CRM', 
@@ -56,6 +61,7 @@ const LeadsList = () => {
             Next:''
         },
         {
+            id:6,
             name:'Sharun das',
             Number:9023323453,
             Purpose:'Gdesk', 
@@ -64,6 +70,7 @@ const LeadsList = () => {
             Next:'25 Dec 2023 , 10:00pm'
         },
         {
+            id:7,
             name:'John Deo',
             Number:9023323453,
             Purpose:'Getlead CRM', 
@@ -72,6 +79,7 @@ const LeadsList = () => {
             Next:''
         },
         {
+            id:8,
             name:'Sharun das',
             Number:9023323453,
             Purpose:'Gdesk', 
@@ -126,9 +134,9 @@ const LeadsList = () => {
 
         <Box>
             {leadDetails.map((data)=>{
-                return <>
-                    <LeadsListData data={data}/>
-                </>
+                return <div key={data.id}>
+                    <LeadsListData  data={data}/>
+                </div>
             })}
             
         </Box>

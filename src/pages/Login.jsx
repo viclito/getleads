@@ -1,7 +1,7 @@
 import { Box,  Paper,  Typography } from '@mui/material'
 import React from 'react'
 import mainimg from '../assets/OBJECTS.png'
-import Form from './Leads/Form'
+import Form from './Login/Form'
 
 const Login = () => {
 
