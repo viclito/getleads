@@ -5,7 +5,7 @@ import { PlusSvg, ProfileCall2Svg, ProfileCallSvg, ProfileDeleteSvg, ProfileEdit
 import ProfileMainForm from './ProfileMainForm'
 import { TabContext, TabList, TabPanel } from '@mui/lab'
 import ProfileActivity from './ProfileActivity'
-// import AddTask from './AddTask'
+import AddTask from './AddTask'
 import AddLog1 from './AddLog1'
 import AddLog2 from './AddLog2'
 import AddLog3 from './AddLog3'
@@ -21,7 +21,7 @@ import TaskTimeline from './timeline/TaskTimeline'
 import DealTimeline from './timeline/DealTimeline'
 
 
-const Profile = ({children , profileToggle , setProfileToggle , username}) => {
+const Profile = ({ profileToggle , setProfileToggle , username}) => {
   const [value, setValue] =useState('1');
   const [activitys, setActivitys] =useState(10);
   const [ log, setLog] =useState(2);
@@ -29,6 +29,7 @@ const Profile = ({children , profileToggle , setProfileToggle , username}) => {
   const [deal, setDeal] =useState(6);
   const [type , setType] = useState('')
   const [addDealToggle , setAddDealToggle] = useState(false)
+  const [addTaskToggle , setAddTaskToggle] = useState(false)
 
   const activity = Activity.length
   useEffect(()=>{
@@ -142,7 +143,7 @@ const Profile = ({children , profileToggle , setProfileToggle , username}) => {
                       </TabList>
                     </Box>
                     <Box sx={{position:'relative'}}>
-                      <ButtonGroup variant="contained" aria-label="Add-buttons" >
+                      <ButtonGroup variant="contained" aria-label="Add-buttons" onClick={()=>setAddTaskToggle(true)} >
                         <Button sx={{backgroundColor:"#EE3448" , '&:hover': {bgcolor: '#EE4E44'} }}>Add</Button>
                         <Button sx={{backgroundColor:"#EE3448" , '&:hover': {bgcolor: '#EE4E44'} }}>+</Button>
                       </ButtonGroup>
@@ -172,7 +173,7 @@ const Profile = ({children , profileToggle , setProfileToggle , username}) => {
         </Box>
 
 
-        {/* <AddTask/> */}
+        <AddTask addTaskToggle={addTaskToggle} setAddTaskToggle={setAddTaskToggle} />
         {type === 'log a call' &&  <AddLog1 type={type}  setType={setType} typeList={typeList}/>}
         {type === 'log a note' &&  <AddLog2 type={type}  setType={setType} typeList={typeList}/>}
         {type === 'log a mail' &&  <AddLog3 type={type}  setType={setType} typeList={typeList}/>}

@@ -10,7 +10,7 @@ import AddLeadsText from '../../../components/AddLeadsText'
 
 
 
-const AddTask = () => {
+const AddTask = ({addTaskToggle , setAddTaskToggle}) => {
     const [task , setTask] = useState('')
     const [type , setType] = useState('')
     const [priority , setPriority] = useState('')
@@ -46,11 +46,11 @@ const AddTask = () => {
         e.preventDefault()
     }
   return (
-    <Paper sx={{position:'absolute' , bottom:'10px' , right:'20px' , padding:2  , borderRadius:'10px' , width:'450px' , display:'block'}}>
+    <Paper sx={{position:'absolute' , bottom:'10px' , right:'20px' , padding:2  , borderRadius:'10px' , width:'450px' , display:addTaskToggle?'block':'none'}}>
         <Box sx={{display:'flex' , justifyContent:'space-between' , padding:'20px 0px'}}>
             <Typography variant='subtitle2'>Add Leads</Typography>
             <Button sx={{ minWidth: '16px'}} 
-            // onClick={()=>setAddTaskToggle(false)}
+            onClick={()=>setAddTaskToggle(false)}
             >
                 <img src={cross} alt="" style={{width:'18px' , height:'18px'}}/>
             </Button>
